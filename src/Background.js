@@ -28,17 +28,17 @@ class Background extends React.Component {
       } catch (error) {
         console.log(error);
       }
-
     }
 
     render() {
       return(
         <div>
-          <img src={this.state.backgrounds.url} alt=" " />
+          <img src={this.state.backgrounds.url} alt=" "/>
         </div>
+
       )
     }
   }
   
 
-export default Background
+export default Background;

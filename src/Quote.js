@@ -34,7 +34,7 @@ class Quote extends React.Component {
   render() {
     return (
 
-      <div className="container2">
+      <div className="App">
         <div className="container1">
           {this.state.quotes[(this.getRandomIntInclusive(1, 32))]}
         </div>
