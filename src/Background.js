@@ -1,4 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  z-index: auto;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+`;
 
 class Background extends React.Component {
     constructor(props) {
@@ -32,9 +46,9 @@ class Background extends React.Component {
 
     render() {
       return(
-        <div>
-          <img src={this.state.backgrounds.url} alt=" "/>
-        </div>
+        <Container>
+          <Image src={this.state.backgrounds.url} alt=" "/>
+        </Container>
 
       )
     }

@@ -1,4 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  left: 25%;
+  width: 50%;
+  padding-top: 59vh;
+  position: absolute;
+  z-index: 1;
+`;
+
+const Center = styled.div`
+  left: 25%;
+  width: 50%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(12px + 2vmin);
+  position: absolute;
+`;
 
 class Quote extends React.Component {
   constructor(props) {
@@ -21,8 +39,9 @@ class Quote extends React.Component {
     }).then(results => {
       let quotes = results.data.map((quote) => {
         return(
-          <div key={quote.objectID}>
-          <p>{quote.attributes.text}</p>  
+          <div key={quote.id}>
+          <p>{quote.attributes.text}</p>
+          {/* <p>{quote.included}</p>   */}
           </div>
         )
       })
@@ -34,11 +53,11 @@ class Quote extends React.Component {
   render() {
     return (
 
-      <div className="App">
-        <div className="container1">
+      <Container>
+        <Center>
           {this.state.quotes[(this.getRandomIntInclusive(1, 32))]}
-        </div>
-      </div>
+        </Center>
+      </Container>
     )
   }
 }
