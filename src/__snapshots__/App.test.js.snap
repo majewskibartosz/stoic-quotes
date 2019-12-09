@@ -26,6 +26,7 @@ exports[`<App /> snapshot renders 1`] = `
     <img
       alt=" "
       className="sc-EHOje kzWOdU"
+      src={Array []}
     />
   </div>
 </div>

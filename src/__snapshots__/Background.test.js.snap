@@ -7,6 +7,7 @@ exports[`<Background /> snapshot renders 1`] = `
   <img
     alt=" "
     className="sc-bwzfXH leiZSW"
+    src={Array []}
   />
 </div>
 `;

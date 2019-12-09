@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -33,21 +34,19 @@ class Background extends React.Component {
       const url = `https://bing.biturl.top/?resolution=1920&format=json&index=${randomImg}&mkt=en-UK`
 
       try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw Error(response.statusText)
-        }
-        const json = await response.json();
-        this.setState({backgrounds: json});
+        const response = await axios.get(url);
+        let data = response.data;
+        // const json = await response.json();
+        this.setState({backgrounds: data.url});
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
 
     render() {
       return(
         <Container>
-          <Image src={this.state.backgrounds.url} alt=" "/>
+          <Image src={this.state.backgrounds} alt=" "/>
         </Container>
 
       )
