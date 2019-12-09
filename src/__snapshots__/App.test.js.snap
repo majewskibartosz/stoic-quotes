@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot renders 1`] = `
+<div
+  className="sc-bZQynM eKjPnv"
+>
+  <div
+    className="sc-bwzfXH hfSMDM"
+  >
+    <div
+      className="sc-bdVaJa yaRiT"
+    >
+      1:51:48 PM
+    </div>
+  </div>
+  <div
+    className="sc-htpNat knwwOj"
+  >
+    <div
+      className="sc-bxivhb hpnUox"
+    />
+  </div>
+  <div
+    className="sc-ifAKCX ivIpuC"
+  >
+    <img
+      alt=" "
+      className="sc-EHOje kzWOdU"
+    />
+  </div>
+</div>
+`;

@@ -14,7 +14,7 @@ const Center = styled.div`
   width: 50%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(12px + 2vmin);
+  font-size: calc(10px + 2.3vmin);
   position: absolute;
 `;
 
@@ -36,18 +36,19 @@ class Quote extends React.Component {
     fetch('https://randomstoicquotesapi.herokuapp.com/api/v1/quotes')
     .then(data => {
       return data.json();
-    }).then(results => {
+    })
+    .then(results => {
       let quotes = results.data.map((quote) => {
         return(
           <div key={quote.id}>
-          <p>{quote.attributes.text}</p>
-          {/* <p>{quote.included}</p>   */}
+          <p>"{quote.attributes.text}"</p>
           </div>
         )
       })
       this.setState({quotes: quotes});
       console.log("state", this.state.quotes);
     })
+    .catch(error => console.error(error));
   }
 
   render() {

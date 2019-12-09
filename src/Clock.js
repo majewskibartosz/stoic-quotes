@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Div = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(20px + 15vmin);
-  font-weight: 600;
 `;
 
 const Container = styled.div`
@@ -22,7 +21,7 @@ const Container = styled.div`
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {date: new Date(Date.now())};
   }
 
   componentDidMount() {
@@ -38,7 +37,7 @@ class Clock extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(Date.now())
     });
   }
 
