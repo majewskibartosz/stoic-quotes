@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Background /> snapshot renders 1`] = `
+<div
+  className="sc-bdVaJa fpmuaa"
+>
+  <img
+    alt=" "
+    className="sc-bwzfXH leiZSW"
+  />
+</div>
+`;

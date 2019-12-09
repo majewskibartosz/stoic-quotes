@@ -13,19 +13,17 @@ afterAll(() => {
   jest.spyOn(Date, 'now').mockRestore();
 });
 
-describe('App - check for component behaviour', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-});
 
-describe('App', () => {
+describe('<App />', () => {
   test('snapshot renders', () => {
     const component = renderer.create(<App />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   })
+  it('renders dom structure without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 })
 

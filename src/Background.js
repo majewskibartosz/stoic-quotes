@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   margin: 0;
@@ -9,10 +9,16 @@ const Container = styled.div`
   z-index: auto;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 100%;
   height: 100%;
 `;
+
+export const getRandomIntInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
 
 class Background extends React.Component {
     constructor(props) {
@@ -22,14 +28,8 @@ class Background extends React.Component {
       };
     }
 
-    getRandomIntInclusive(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min
-    }
-
     async componentDidMount() {
-      const randomImg = this.getRandomIntInclusive(0, 7)
+      const randomImg = getRandomIntInclusive(0, 7)
       const url = `https://bing.biturl.top/?resolution=1920&format=json&index=${randomImg}&mkt=en-UK`
 
       try {
