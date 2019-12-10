@@ -17,14 +17,13 @@ describe('getRandomIntInclusive function', () => {
     expect(randomInteger).not.toBeNull();
   })
 })
-
 describe('<Background />', () => {
   test('snapshot renders', () => {
     const component = renderer.create(<Background />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   })
-
+7
   it('renders <Container />', () => {
     const wrapper = mount(<Background />);
     expect(wrapper.find(Container).length).toEqual(1);
@@ -37,3 +36,4 @@ describe('<Background />', () => {
 })
 
 
+7

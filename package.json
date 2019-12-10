@@ -5,11 +5,13 @@
   "dependencies": {
     "@types/jest": "^24.0.23",
     "axios": "^0.19.0",
+    "node-fetch": "^2.6.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
     "styled-components": "^4.4.1",
-    "styled-reset": "^4.0.8"
+    "styled-reset": "^4.0.8",
+    "unsplash-js": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

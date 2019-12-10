@@ -13,6 +13,7 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 
 export const getRandomIntInclusive = (min, max) => {
@@ -25,20 +26,28 @@ class Background extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        backgrounds: [],
+        photos: [],
+        
       };
     }
 
-    async componentDidMount() {
-      const randomImg = getRandomIntInclusive(0, 7)
-      const url = `https://bing.biturl.top/?resolution=1920&format=json&index=${randomImg}&mkt=en-UK`
+    componentDidMount() {
+      this.getRandomImg();
+    }
+
+    async getRandomImg() {
+      const url = './.netlify/functions/images'
 
       try {
         const response = await axios.get(url);
-        let data = response.data;
-        // const json = await response.json();
-        this.setState({backgrounds: data.url});
-      } catch (error) {
+        if (response.status !== 200) {
+          throw Error(response.statusText)
+        }
+        let data = await response.data
+        this.setState({photos: data.urls.regular});
+        console.log(data)
+
+      } catch(error) {
         console.error(error);
       }
     }
@@ -46,7 +55,7 @@ class Background extends React.Component {
     render() {
       return(
         <Container>
-          <Image src={this.state.backgrounds} alt=" "/>
+          <Image src={this.state.photos} alt=" "/>
         </Container>
 
       )
