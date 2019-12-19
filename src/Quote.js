@@ -6,9 +6,14 @@ const Container = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   color: rgba(255,255,255,.9);
   z-index: 1;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-22px);
+  }
 `;
 
 const Text = styled.div`
@@ -16,7 +21,23 @@ const Text = styled.div`
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(14px + 1vmin);
-  line-height: 1;
+  line-height: 1.1;
+`;
+
+const Link = styled.a`
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+  font-size: calc(11px + 1vmin);
+  
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.3s;
+
+  ${Container}:hover & {
+    visibility: visible;
+    opacity: 0.8;
+    transition: visibility 0s linear 0s, opacity 0.3s;
+  }
 `;
 
 class Quote extends React.Component {
@@ -29,7 +50,7 @@ class Quote extends React.Component {
   }
 
   componentDidMount() {
-  fetch("https://type.fit/api/quotes")
+  fetch('https://type.fit/api/quotes')
     .then(response => {
       return response.json();
     })
@@ -38,7 +59,12 @@ class Quote extends React.Component {
         return(
           <div key={quote.id}>
           <p>"{quote.text}"</p>
-          <p>- {quote.author}</p>
+          <Link 
+            href={`https://en.wikipedia.org/wiki/${quote.author}`}
+            target="_blank"
+            rel="noopener noreferrer">
+            - {quote.author}
+          </Link>
           </div>
         )
       })
@@ -56,7 +82,7 @@ class Quote extends React.Component {
         </Text>
       </Container>
     )
-  }
+  };
 }
 
 export default Quote;

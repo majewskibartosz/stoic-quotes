@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import getGreeting from './getGreeting';
 
 const Text = styled.div`
   width: 100%;
@@ -12,12 +13,10 @@ const Text = styled.div`
   user-select: none;
 `;
 
-
 function Greet(props) {
-  console.log(props)
   return (
-    <Text>{props.time < 12 ? 'Good morning.' : 'Make it count.'}</Text>
-  )
+      <Text>{getGreeting(props.time)}</Text>
+  );
 }
 
 export default Greet;

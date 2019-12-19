@@ -23,7 +23,7 @@ class App extends React.Component {
         <Background />
       </GlobalStyle>
     ) 
-  }
+  };
 }
 
 export default App;

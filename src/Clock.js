@@ -56,7 +56,7 @@ class Clock extends React.Component {
         <Greeting time={this.state.date.getHours()}/>
       </Container>
     );
-  }
+  };
 }
 
 export default Clock;
