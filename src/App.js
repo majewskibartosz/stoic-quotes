@@ -7,9 +7,9 @@ import { Reset } from 'styled-reset'
 
 
 const GlobalStyle = styled.div`
-  color: white;
   text-shadow: 2px 3px 4px rgba(0,0,0,0.40);
   /* text-shadow: 0px 4px 8px rgba(0,0,0,0.77); */
+  
 `;
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Image from './Image';
-import { getRandomIntInclusive } from './getRandomInt';
+import getRandomIntInclusive from './getRandomIntInclusive';
 
 const Container = styled.div`
   width: 100%;

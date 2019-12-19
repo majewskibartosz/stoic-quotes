@@ -2,12 +2,10 @@
 
 exports[`<Background /> snapshot renders 1`] = `
 <div
-  className="sc-bdVaJa fpmuaa"
+  className="sc-bwzfXH kGrqoq"
 >
   <img
-    alt=" "
-    className="sc-bwzfXH leiZSW"
-    src={Array []}
+    className="sc-bdVaJa inUwYz"
   />
 </div>
 `;

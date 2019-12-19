@@ -2,31 +2,32 @@
 
 exports[`<App /> snapshot renders 1`] = `
 <div
-  className="sc-bZQynM eKjPnv"
+  className="sc-bZQynM bRgZOp"
 >
   <div
     className="sc-bwzfXH hfSMDM"
   >
     <div
-      className="sc-bdVaJa yaRiT"
+      className="sc-bdVaJa kfnStz"
     >
-      1:51:48 PM
+      13
+      :
+      
+      51
     </div>
   </div>
   <div
-    className="sc-htpNat knwwOj"
+    className="sc-htpNat ftOfaW"
   >
     <div
-      className="sc-bxivhb hpnUox"
+      className="sc-bxivhb ifdZKV"
     />
   </div>
   <div
-    className="sc-ifAKCX ivIpuC"
+    className="sc-EHOje eUZBbF"
   >
     <img
-      alt=" "
-      className="sc-EHOje kzWOdU"
-      src={Array []}
+      className="sc-ifAKCX oWEds"
     />
   </div>
 </div>

@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import getRandomIntInclusive from './getRandomIntInclusive';
 
 const Container = styled.div`
-  left: 25%;
-  width: 50%;
-  padding-top: 59vh;
+  width: 100%;
   position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  color: rgba(255,255,255,.9);
   z-index: 1;
 `;
 
-const Center = styled.div`
-  left: 25%;
-  width: 50%;
+const Text = styled.div`
+  width: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(10px + 2.3vmin);
-  position: absolute;
+  font-size: calc(14px + 1vmin);
+  line-height: 1;
 `;
 
 class Quote extends React.Component {
@@ -23,41 +24,36 @@ class Quote extends React.Component {
     super(props);
     this.state = {
       quotes: [],
+      loading: false,
     };
   }
 
-  getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min
-  }
-
   componentDidMount() {
-    fetch('https://randomstoicquotesapi.herokuapp.com/api/v1/quotes')
-    .then(data => {
-      return data.json();
+  fetch("https://type.fit/api/quotes")
+    .then(response => {
+      return response.json();
     })
-    .then(results => {
-      let quotes = results.data.map((quote) => {
+    .then(data => {
+      let quotes = data.map((quote) => {
         return(
           <div key={quote.id}>
-          <p>"{quote.attributes.text}"</p>
+          <p>"{quote.text}"</p>
+          <p>- {quote.author}</p>
           </div>
         )
       })
-      this.setState({quotes: quotes});
+      this.setState({quotes: quotes})
       console.log("state", this.state.quotes);
     })
     .catch(error => console.error(error));
-  }
+    };
 
   render() {
     return (
-
       <Container>
-        <Center>
-          {this.state.quotes[(this.getRandomIntInclusive(1, 32))]}
-        </Center>
+        <Text>
+          {this.state.quotes[(getRandomIntInclusive(1, 1643))]}
+        </Text>
       </Container>
     )
   }

@@ -1,22 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import Greeting from './Greeting'
 
-const Div = styled.div`
+const Time = styled.div`
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(20px + 15vmin);
+  /* font-size: 20vmin; */
+  font-size: 1250%;
+  letter-spacing: -5px;
+  color: white;
+  user-select: none;
 `;
 
 const Container = styled.div`
-  left: 25%;
-  width: 50%;
+  /* left: 25%; */
+  width: 100%;
   height: 50%;
-  top: 25%;
+  top: 20%;
   text-align: center;
   margin-top: 15vh;
   position: absolute;
   z-index: 1;
 `;
-
 
 class Clock extends React.Component {
   constructor(props) {
@@ -27,7 +31,7 @@ class Clock extends React.Component {
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
-      1000
+      60000
     );
   }
 
@@ -44,7 +48,12 @@ class Clock extends React.Component {
   render() {
     return (
       <Container>
-        <Div>{this.state.date.toLocaleTimeString()}</Div>
+        <Time>
+          {this.state.date.getHours()}:
+          {this.state.date.getMinutes() < 10 ? '0' : ''}
+          {this.state.date.getMinutes()}
+        </Time>
+        <Greeting time={this.state.date.getHours()}/>
       </Container>
     );
   }
