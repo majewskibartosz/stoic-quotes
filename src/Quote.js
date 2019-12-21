@@ -20,14 +20,14 @@ const Text = styled.div`
   width: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(14px + 1vmin);
+  font-size: calc(12px + 1vmin);
   line-height: 1.1;
 `;
 
 const Link = styled.a`
   color: rgba(255,255,255,.9);
   text-decoration: none;
-  font-size: calc(11px + 1vmin);
+  font-size: calc(9px + 1vmin);
   
   visibility: hidden;
   opacity: 0;
@@ -63,7 +63,7 @@ class Quote extends React.Component {
             href={`https://en.wikipedia.org/wiki/${quote.author}`}
             target="_blank"
             rel="noopener noreferrer">
-            - {quote.author}
+            {quote.author}
           </Link>
           </div>
         )

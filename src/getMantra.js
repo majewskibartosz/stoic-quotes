@@ -40,7 +40,7 @@ export const mantras = [
   'Create everyday.',
   'You are enough.',
   'Modest life.',
-  'Everyday is a new start.',
+  'Everyday is a fresh start.',
   'Now is the moment.',
   'Lead by example.',
   'Walk the talk.',
@@ -49,11 +49,17 @@ export const mantras = [
   'Work smart.',
   'Look for opportunities.',
   'Positive mindset.',
+  'Be calm.',
+  'Tomorrow is another try.',
+  'Simple. Modest. Life.',
+  'Be unstoppable.',
+  'You are well.',
+  'Create opportunities.'
 
 ];
 
 export function getMantra(dictionary) {
-  const randomNumber = getRandomIntInclusive(1, 47)
+  const randomNumber = getRandomIntInclusive(1, mantras.length)
   return (
     dictionary[randomNumber]
   );
