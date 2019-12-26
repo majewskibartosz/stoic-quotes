@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Greeting from './Greeting'
+import Greet from './Greeting'
 
 const Time = styled.div`
   font-family: Arial, Helvetica, sans-serif;
@@ -31,7 +31,7 @@ class Clock extends React.Component {
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
-      60000
+      1000
     );
   }
 
@@ -46,6 +46,7 @@ class Clock extends React.Component {
   }
 
   render() {
+    console.log(this.state.date.getHours())
     return (
       <Container>
         <Time>
@@ -53,7 +54,7 @@ class Clock extends React.Component {
           {this.state.date.getMinutes() < 10 ? '0' : ''}
           {this.state.date.getMinutes()}
         </Time>
-        <Greeting time={this.state.date.getHours()}/>
+        <Greet time={this.state.date.getHours()}/>
       </Container>
     );
   };

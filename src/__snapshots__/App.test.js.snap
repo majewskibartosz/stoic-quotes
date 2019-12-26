@@ -2,32 +2,40 @@
 
 exports[`<App /> snapshot renders 1`] = `
 <div
-  className="sc-bZQynM bRgZOp"
+  className="sc-dnqmqq lhwZXq"
 >
   <div
-    className="sc-bwzfXH hfSMDM"
+    className="sc-htoDjs eJKQCh"
+  />
+  <div
+    className="sc-htpNat gxeMSR"
   >
     <div
-      className="sc-bdVaJa kfnStz"
+      className="sc-bwzfXH bpIvBa"
     >
       13
       :
       
       51
     </div>
+    <div
+      className="sc-bdVaJa bvqNRM"
+    >
+      Good afternoon.
+    </div>
   </div>
   <div
-    className="sc-htpNat ftOfaW"
+    className="sc-bxivhb eOAFBY"
   >
     <div
-      className="sc-bxivhb ifdZKV"
+      className="sc-ifAKCX bZicmW"
     />
   </div>
   <div
-    className="sc-EHOje eUZBbF"
+    className="sc-gzVnrw fYphPI"
   >
     <img
-      className="sc-ifAKCX oWEds"
+      className="sc-bZQynM PMDsQ"
     />
   </div>
 </div>

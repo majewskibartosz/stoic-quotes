@@ -23,7 +23,7 @@ const Layer = styled.div`
   position: absolute;
   z-index: 2;
 
-  animation: 0.85s ${fadeIn} ease forwards;
+  animation: 0.35s ${fadeIn} ease forwards;
 `;
 
 function Overlay() {

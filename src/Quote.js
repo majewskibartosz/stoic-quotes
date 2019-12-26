@@ -12,7 +12,7 @@ const Container = styled.div`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-22px);
+    transform: translateY(-18px);
   }
 `;
 
@@ -78,7 +78,7 @@ class Quote extends React.Component {
     return (
       <Container>
         <Text>
-          {this.state.quotes[(getRandomIntInclusive(1, 1643))]}
+          {this.state.quotes[(getRandomIntInclusive(1, this.state.quotes.length))]}
         </Text>
       </Container>
     )

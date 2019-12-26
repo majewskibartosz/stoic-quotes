@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import Image from './Image';
-import getRandomIntInclusive from './getRandomIntInclusive';
 
 const Container = styled.div`
   width: 100%;
@@ -16,9 +14,9 @@ function Background() {
   const [photo, setPhoto] = React.useState();
 
   React.useEffect(() => {
-    const randomInt = getRandomIntInclusive(1, 100)
+    const url = 'https://source.unsplash.com/collection/137627/1920x1080/daily'
     const getRandomPhoto = () => {
-      const photo = (`https://source.unsplash.com/collection/2281806/${randomInt}`)
+      const photo = (url)
       setPhoto(photo);
     };
     getRandomPhoto();
