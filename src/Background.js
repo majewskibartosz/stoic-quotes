@@ -7,6 +7,7 @@ const Container = styled.div`
   height: 100%;
   margin: 0;
   position: absolute;
+  object-position: 50% 50%;
   z-index: auto;
 `;
 
@@ -14,7 +15,7 @@ function Background() {
   const [photo, setPhoto] = React.useState();
 
   React.useEffect(() => {
-    const url = 'https://source.unsplash.com/collection/137627/1920x1080/daily'
+    const url = 'https://source.unsplash.com/collection/137627/1280x720/daily'
     const getRandomPhoto = () => {
       const photo = (url)
       setPhoto(photo);
