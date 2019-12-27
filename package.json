@@ -9,7 +9,9 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "^3.3.0",
+    "styled-breakpoints": "^7.1.0",
     "styled-components": "^4.4.1",
+    "styled-media-query": "^2.1.2",
     "styled-reset": "^4.0.8",
     "unsplash-js": "^6.0.0"
   },
@@ -40,7 +42,6 @@
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
     "jest-styled-components": "^6.3.4",
-    "react-test-renderer": "^16.12.0",
-    "styled-components-breakpoint": "^3.0.0-preview.20"
+    "react-test-renderer": "^16.12.0"
   }
 }

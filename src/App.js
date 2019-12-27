@@ -3,6 +3,7 @@ import Clock from './Clock';
 import Quote from './Quote';
 import Background from './Background';
 import Overlay from './Overlay';
+import Greeting from './Greeting';
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
@@ -19,6 +20,7 @@ class App extends React.Component {
         <GlobalStyle />
         <Overlay />
         <Clock />
+        <Greeting />
         <Quote />
         <Background />
       </>

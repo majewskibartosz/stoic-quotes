@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { down, between } from 'styled-breakpoints';
 import getGreeting from './getGreeting';
+
+const Container = styled.div`
+  width: 100%;
+  top: 60%;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+`;
 
 const Text = styled.div`
   width: 100%;
@@ -11,11 +20,21 @@ const Text = styled.div`
   font-weight: 500;
   line-height: normal;
   user-select: none;
+
+  ${down('tablet')} {
+    font-size: 300%;
+  }
+
+  ${between('tablet', 'desktop')} {
+    font-size: 450%;
+  }
 `;
 
-function Greet(props) {
+function Greet() {
   return (
-      <Text>{getGreeting(props.time)}</Text>
+    <Container>
+      <Text>{getGreeting(new Date(Date.now()).getHours())}</Text>
+    </Container>
   );
 }
 

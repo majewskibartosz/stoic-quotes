@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Greet from './Greeting'
+import { down, between } from 'styled-breakpoints';
+import media from "styled-media-query";
+
 
 const Time = styled.div`
   font-family: Arial, Helvetica, sans-serif;
@@ -9,6 +11,14 @@ const Time = styled.div`
   letter-spacing: -5px;
   color: white;
   user-select: none;
+
+  ${down('tablet')} {
+    font-size: 800%;
+  }
+
+  ${between('tablet', 'desktop')} {
+    font-size: 1150%;
+  }
 `;
 
 const Container = styled.div`
@@ -20,6 +30,7 @@ const Container = styled.div`
   margin-top: 15vh;
   position: absolute;
   z-index: 1;
+  }
 `;
 
 class Clock extends React.Component {
@@ -54,7 +65,6 @@ class Clock extends React.Component {
           {this.state.date.getMinutes() < 10 ? '0' : ''}
           {this.state.date.getMinutes()}
         </Time>
-        <Greet time={this.state.date.getHours()}/>
       </Container>
     );
   };
