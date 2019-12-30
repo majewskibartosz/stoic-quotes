@@ -5,9 +5,8 @@ import getGreeting from './getGreeting';
 
 const Container = styled.div`
   width: 100%;
-  top: 60%;
   text-align: center;
-  position: absolute;
+  position: relative;
   z-index: 1;
 `;
 
@@ -16,18 +15,16 @@ const Text = styled.div`
   color: white;
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 500%;
+  font-size: 350%;
   font-weight: 500;
   line-height: normal;
   user-select: none;
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.30);
 
-  ${down('tablet')} {
-    font-size: 300%;
-  }
-
-  ${between('tablet', 'desktop')} {
-    font-size: 450%;
-  }
+  position: fixed;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, 60%);
 `;
 
 function Greet() {

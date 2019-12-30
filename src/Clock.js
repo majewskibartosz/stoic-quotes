@@ -1,36 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import { down, between } from 'styled-breakpoints';
-import media from "styled-media-query";
-
 
 const Time = styled.div`
   font-family: Arial, Helvetica, sans-serif;
-  /* font-size: 20vmin; */
-  font-size: 1250%;
+  font-size: 1050%;
   letter-spacing: -5px;
   color: white;
   user-select: none;
+  text-align: center;
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.30);
 
-  ${down('tablet')} {
-    font-size: 800%;
-  }
-
-  ${between('tablet', 'desktop')} {
-    font-size: 1150%;
-  }
+  position: fixed;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Container = styled.div`
-  /* left: 25%; */
+  position: relative;
   width: 100%;
-  height: 50%;
-  top: 20%;
-  text-align: center;
-  margin-top: 15vh;
-  position: absolute;
+  height: 100%;
   z-index: 1;
-  }
 `;
 
 class Clock extends React.Component {

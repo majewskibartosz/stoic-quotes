@@ -9,6 +9,7 @@ const Container = styled.div`
   margin-bottom: 0px;
   color: rgba(255,255,255,.9);
   z-index: 1;
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.30);
   transition: transform 0.3s ease;
 
   &:hover {
@@ -20,14 +21,14 @@ const Text = styled.div`
   width: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(12px + 1vmin);
+  font-size: calc(10px + 1vmin);
   line-height: 1.1;
 `;
 
 const Link = styled.a`
   color: rgba(255,255,255,.9);
   text-decoration: none;
-  font-size: calc(9px + 1vmin);
+  font-size: calc(8px + 1vmin);
   
   visibility: hidden;
   opacity: 0;
