@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { down, between } from 'styled-breakpoints';
 import getGreeting from './getGreeting';
 
 const Container = styled.div`

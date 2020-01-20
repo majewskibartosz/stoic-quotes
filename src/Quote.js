@@ -70,7 +70,6 @@ class Quote extends React.Component {
         )
       })
       this.setState({quotes: quotes})
-      console.log("state", this.state.quotes);
     })
     .catch(error => console.error(error));
     };

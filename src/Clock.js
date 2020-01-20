@@ -5,6 +5,7 @@ const Time = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1050%;
   letter-spacing: -5px;
+  line-height: 1;
   color: white;
   user-select: none;
   text-align: center;
@@ -47,7 +48,6 @@ class Clock extends React.Component {
   }
 
   render() {
-    console.log(this.state.date.getHours())
     return (
       <Container>
         <Time>

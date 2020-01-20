@@ -15,13 +15,14 @@ function Background() {
   const [photo, setPhoto] = React.useState();
 
   React.useEffect(() => {
-    const url = 'https://source.unsplash.com/collection/137627/1280x720/daily'
+    const url = 'https://source.unsplash.com/collection/477172/1920x1080/'
     const getRandomPhoto = () => {
       const photo = (url)
       setPhoto(photo);
     };
     getRandomPhoto();
   }, []);
+  
   return (
     <Container>
       <Image src={photo} />

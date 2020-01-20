@@ -55,7 +55,6 @@ export const mantras = [
   'Be unstoppable.',
   'You are well.',
   'Create opportunities.'
-
 ];
 
 export function getMantra(dictionary) {

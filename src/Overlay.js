@@ -15,7 +15,7 @@ const fadeIn = keyframes`
 
 const Layer = styled.div`
   display: block;
-  background-color: rgb(51, 51, 51);
+  background-color: rgba(255,255,255, 0.9);
   top: 0;
   bottom: 0;
   right: 0;
@@ -23,7 +23,7 @@ const Layer = styled.div`
   position: absolute;
   z-index: 2;
 
-  animation: 0.35s ${fadeIn} ease forwards;
+  animation: 0.8s ${fadeIn} ease-out forwards;
 `;
 
 function Overlay() {
