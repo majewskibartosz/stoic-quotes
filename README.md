@@ -2,7 +2,7 @@
 # Stoicus Maximus
 
 ### Daily photo and stoic inspiration.  
-[Live demo](https://stoicus-maximus.netlify.com/)  
+[Live demo](https://stoicusmaximus.netlify.com/)  
 
 Press **F5** to refresh and fetch new background photo and quote.  
 Hover on quote to display the author.  
