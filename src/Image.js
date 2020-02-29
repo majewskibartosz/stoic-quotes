@@ -6,6 +6,7 @@ const Img = styled.img`
   height: 100%;
   vertical-align: bottom;
   object-fit: cover;
+  background-color: black;
 `;
 
 function Image(props) {
