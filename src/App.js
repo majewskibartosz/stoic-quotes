@@ -9,6 +9,7 @@ import reset from 'styled-reset'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
+  background-color: black;
 `
 
 class App extends React.Component {

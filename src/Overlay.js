@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
-  80% {
+  50% {
     opacity: 1;
     z-index: 2;
   }
@@ -15,7 +15,7 @@ const fadeIn = keyframes`
 
 const Layer = styled.div`
   display: block;
-  background-color: rgba(255,255,255, 0.9);
+  background-color: black;
   top: 0;
   bottom: 0;
   right: 0;
@@ -23,7 +23,7 @@ const Layer = styled.div`
   position: absolute;
   z-index: 2;
 
-  animation: 0.5s ${fadeIn} ease-in-out forwards;
+  animation: 1s ${fadeIn} ease forwards;
 `;
 
 function Overlay() {
