@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect  } from 'react';
 import styled from 'styled-components';
 import Image from './Image';
 
@@ -13,9 +13,9 @@ const Container = styled.div`
 `;
 
 function Background() {
-  const [photo, setPhoto] = React.useState();
+  const [photo, setPhoto] = useState();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const url = 'https://source.unsplash.com/collection/477172/1600x900'
     const getRandomPhoto = () => {
       const photo = (url)
