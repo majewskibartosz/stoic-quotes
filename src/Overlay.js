@@ -26,10 +26,6 @@ const Layer = styled.div`
   animation: 1s ${fadeIn} ease forwards;
 `;
 
-function Overlay() {
-  return(
-    <Layer />
-  )
-}
+const Overlay = () => <Layer />
 
 export default Overlay;
