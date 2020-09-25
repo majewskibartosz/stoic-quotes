@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Time = styled.div`
@@ -24,40 +24,30 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date(Date.now())};
-  }
+const Clock = () => {
+  const [timer, setTimer] = useState({date: new Date(Date.now())})
 
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
+  useEffect(() => {
+    let timerID = setInterval(
+      () => tick(),
       1000
     );
-  }
+    return () => {
+      clearInterval(timerID)
+    }
+  }, [])
 
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
+  const tick = () => setTimer({date: new Date(Date.now())});
 
-  tick() {
-    this.setState({
-      date: new Date(Date.now())
-    });
-  }
-
-  render() {
-    return (
-      <Container>
-        <Time>
-          {this.state.date.getHours()}:
-          {this.state.date.getMinutes() < 10 ? '0' : ''}
-          {this.state.date.getMinutes()}
-        </Time>
-      </Container>
-    );
-  };
+  return (
+    <Container>
+      <Time>
+        {timer.date.getHours()}:
+        {timer.date.getMinutes() < 10 ? '0' : ''}
+        {timer.date.getMinutes()}
+      </Time>
+    </Container>
+  )
 }
 
 export default Clock;
