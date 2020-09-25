@@ -59,7 +59,5 @@ export const mantras = [
 
 export const getMantra = (dictionary) => {
   const randomNumber = getRandomIntInclusive(1, mantras.length)
-  return (
-    dictionary[randomNumber]
-  );
+  return dictionary[randomNumber]
 };
