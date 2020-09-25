@@ -12,19 +12,17 @@ const GlobalStyle = createGlobalStyle`
   background-color: black;
 `
 
-class App extends React.Component {
-  render() {
-    return(
-      <>
-        <GlobalStyle />
-        <Overlay />
-        <Clock />
-        <Greeting />
-        <Quote />
-        <Background />
-      </>
-    ) 
-  };
-}
+const App = () => {
+  return(
+    <>
+      <GlobalStyle />
+      <Overlay />
+      <Clock />
+      <Greeting />
+      <Quote />
+      <Background />
+    </>
+  ) 
+};
 
 export default App;
