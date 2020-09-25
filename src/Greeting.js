@@ -26,7 +26,7 @@ const Text = styled.div`
   transform: translate(-50%, 60%);
 `;
 
-function Greet() {
+const Greet = () => {
   return (
     <Container>
       <Text>{getGreeting(new Date(Date.now()).getHours())}</Text>
