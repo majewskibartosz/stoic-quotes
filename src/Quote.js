@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import getRandomIntInclusive from './getRandomIntInclusive';
 
@@ -41,48 +41,41 @@ const Link = styled.a`
   }
 `;
 
-class Quote extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      quotes: [],
-      loading: false,
-    };
+const Quote = () => {
+  const [quotes, setQuotes] = useState({quotes: []})
+  const API_URL = 'https://type.fit/api/quotes'
+
+  useEffect(() => {
+    const fetchQuotes = async () => {
+      const response = await fetch(API_URL)
+      const json = await response.json()
+      setQuotes({quotes: json})
+    }
+    fetchQuotes()
+  },[]);
+
+  const displayQuote = () => {
+    let listedQuote = quotes.quotes.map((quote) => (
+      <div key={quote.id}>
+      <p>"{quote.text}"</p>
+      <Link 
+        href={`https://en.wikipedia.org/wiki/${quote.author}`}
+        target="_blank"
+        rel="noopener noreferrer">
+        {quote.author}
+      </Link>
+      </div>
+      )
+    )
+    return listedQuote[(getRandomIntInclusive(1, quotes.quotes.length))]
   }
 
-  componentDidMount() {
-  fetch('https://type.fit/api/quotes')
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      let quotes = data.map((quote) => {
-        return(
-          <div key={quote.id}>
-          <p>"{quote.text}"</p>
-          <Link 
-            href={`https://en.wikipedia.org/wiki/${quote.author}`}
-            target="_blank"
-            rel="noopener noreferrer">
-            {quote.author}
-          </Link>
-          </div>
-        )
-      })
-      this.setState({quotes: quotes})
-    })
-    .catch(error => console.error(error));
-    };
-
-  render() {
-    return (
-      <Container>
-        <Text>
-          {this.state.quotes[(getRandomIntInclusive(1, this.state.quotes.length))]}
-        </Text>
-      </Container>
-    )
-  };
+  return (
+    <Container>
+      <Text>
+        {displayQuote()}
+      </Text>
+    </Container>
+  )
 }
-
 export default Quote;
