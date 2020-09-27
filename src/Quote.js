@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import getRandomIntInclusive from './getRandomIntInclusive'
@@ -57,7 +58,7 @@ const Quote = () => {
   const displayQuote = () => {
     const listedQuote = quotes.quotes.map((quote) => (
       <div key={quote.id}>
-        <p>`{quote.text}`</p>
+        <p>"{quote.text}"</p>
         <Link
           href={`https://en.wikipedia.org/wiki/${quote.author}`}
           target="_blank"
@@ -67,6 +68,7 @@ const Quote = () => {
         </Link>
       </div>
     ))
+
     return listedQuote[getRandomIntInclusive(1, quotes.quotes.length)]
   }
 
