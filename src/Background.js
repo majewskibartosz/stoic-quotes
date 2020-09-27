@@ -12,7 +12,7 @@ const Container = styled.div`
   background-color: black;
 `;
 
-function Background() {
+const Background = () => {
   const [photo, setPhoto] = useState();
 
   useEffect(() => {
