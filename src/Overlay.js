@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
   50% {
@@ -11,7 +11,7 @@ const fadeIn = keyframes`
     opacity: 0;
     z-index: 0;
   }
-`;
+`
 
 const Layer = styled.div`
   display: block;
@@ -24,8 +24,8 @@ const Layer = styled.div`
   z-index: 2;
 
   animation: 1s ${fadeIn} ease forwards;
-`;
+`
 
 const Overlay = () => <Layer />
 
-export default Overlay;
+export default Overlay

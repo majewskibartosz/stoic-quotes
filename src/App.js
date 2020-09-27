@@ -1,11 +1,12 @@
-import React from 'react';
-import Clock from './Clock';
-import Quote from './Quote';
-import Background from './Background';
-import Overlay from './Overlay';
-import Greeting from './Greeting';
+import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
+
+import Clock from './Clock'
+import Quote from './Quote'
+import Background from './Background'
+import Overlay from './Overlay'
+import Greeting from './Greeting'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const App = () => {
-  return(
+  return (
     <>
       <GlobalStyle />
       <Overlay />
@@ -22,7 +23,7 @@ const App = () => {
       <Quote />
       <Background />
     </>
-  ) 
-};
+  )
+}
 
-export default App;
+export default App

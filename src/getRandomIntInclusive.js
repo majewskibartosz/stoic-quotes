@@ -1,7 +1,8 @@
+/* eslint-disable no-param-reassign */
 const getRandomIntInclusive = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  min = Math.ceil(min)
+  max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-export default getRandomIntInclusive;
+export default getRandomIntInclusive

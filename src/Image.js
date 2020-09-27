@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+/* eslint react/prop-types: 0 */
 
 const Img = styled.img`
   width: 100%;
@@ -7,8 +8,8 @@ const Img = styled.img`
   vertical-align: bottom;
   object-fit: cover;
   background-color: black;
-`;
+`
 
-const Image = props => <Img src={props.src} />
+const Image = ({ src }) => <Img src={src} />
 
-export default Image;
+export default Image

@@ -1,13 +1,13 @@
-import getRandomIntInclusive from './getRandomIntInclusive';
+import getRandomIntInclusive from './getRandomIntInclusive'
 
 export const mantras = [
-  'Don\'t let your dreams be dreams.',
+  "Don't let your dreams be dreams.",
   'Yesterday you said tomorrow.',
   'So just do it.',
   'Make your dreams come true.',
   'Just do it.',
   'Nothing is impossible.',
-  'You\'re not going to stop.',
+  "You're not going to stop.",
   'What are you waiting for?',
   'Yes you can.',
   'Stop giving up.',
@@ -55,9 +55,9 @@ export const mantras = [
   'Be unstoppable.',
   'You are well.',
   'Create opportunities.'
-];
+]
 
 export const getMantra = (dictionary) => {
   const randomNumber = getRandomIntInclusive(1, mantras.length)
   return dictionary[randomNumber]
-};
+}
