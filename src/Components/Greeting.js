@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import getGreeting from './getGreeting'
+import getGreeting from '../Helpers/getGreeting'
 
 const Container = styled.div`
   width: 100%;
@@ -26,12 +26,10 @@ const Text = styled.div`
   transform: translate(-50%, 60%);
 `
 
-const Greet = () => {
-  return (
-    <Container>
-      <Text>{getGreeting(new Date(Date.now()).getHours())}</Text>
-    </Container>
-  )
-}
+const Greet = () => (
+  <Container>
+    <Text>{getGreeting(new Date(Date.now()).getHours())}</Text>
+  </Container>
+)
 
 export default Greet

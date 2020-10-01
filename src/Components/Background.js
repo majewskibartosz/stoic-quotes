@@ -18,8 +18,7 @@ const Background = () => {
   useEffect(() => {
     const url = 'https://source.unsplash.com/collection/477172/1600x900'
     const getRandomPhoto = () => {
-      const image = url
-      setPhoto(image)
+      setPhoto(url)
     }
     getRandomPhoto()
   }, [])

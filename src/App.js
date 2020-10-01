@@ -1,29 +1,32 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
-import Clock from './Clock'
-import Quote from './Quote'
-import Background from './Background'
-import Overlay from './Overlay'
-import Greeting from './Greeting'
+import MainScreen from './Components/MainScreen'
+import Background from './Components/Background'
+import Overlay from './Components/Overlay'
+import Journal from './Components/Journal'
+import Error from './Components/Error'
+import Navbar from './Components/Navbar'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
   background-color: black;
 `
 
-const App = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <Overlay />
-      <Clock />
-      <Greeting />
-      <Quote />
-      <Background />
-    </>
-  )
-}
+const App = () => (
+  <>
+    <GlobalStyle />
+    <Navbar />
+    <Overlay />
+    <Background />
+    <Switch>
+      <Route path="/" component={MainScreen} exact />
+      <Route path="/journal" component={Journal} />
+      <Route component={Error} />
+    </Switch>
+  </>
+)
 
 export default App
