@@ -3,12 +3,12 @@ import { Route, Switch } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
-import MainScreen from './Components/MainScreen'
-import Background from './Components/Background'
-import Overlay from './Components/Overlay'
-import Journal from './Components/Journal'
-import Error from './Components/Error'
-import Navbar from './Components/Navbar'
+import MainScreen from './MainScreen'
+import Background from './Background'
+import Overlay from './Overlay'
+import Journal from './Journal'
+import Error from './Error'
+import Navbar from './Navbar'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
