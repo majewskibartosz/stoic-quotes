@@ -43,20 +43,20 @@ const Link = styled.a`
 `
 
 const Quote = () => {
-  const [quotes, setQuotes] = useState({ quotes: [] })
+  const [quotes, setQuotes] = useState([])
   const API_URL = 'https://type.fit/api/quotes'
 
   useEffect(() => {
     const fetchQuotes = async () => {
       const response = await fetch(API_URL)
       const json = await response.json()
-      setQuotes({ quotes: json })
+      setQuotes(json)
     }
     fetchQuotes()
   }, [])
 
   const displayQuote = () => {
-    const listedQuote = quotes.quotes.map((quote) => (
+    const listedQuote = quotes.map((quote) => (
       <div key={quote.id}>
         <p>"{quote.text}"</p>
         <Link
@@ -69,7 +69,7 @@ const Quote = () => {
       </div>
     ))
 
-    return listedQuote[getRandomIntInclusive(1, quotes.quotes.length)]
+    return listedQuote[getRandomIntInclusive(1, quotes.length)]
   }
 
   return (
