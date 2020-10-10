@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import getGreeting from '../Helpers/getGreeting'
+import getGreeting from '../utils/getGreeting'
 
 const Container = styled.div`
   width: 100%;

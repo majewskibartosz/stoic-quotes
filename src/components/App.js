@@ -23,7 +23,9 @@ const App = () => (
     <Background />
     <Switch>
       <Route path="/" component={MainScreen} exact />
-      <Route path="/journal" component={Journal} />
+      <Route path="/journal">
+        <Journal />
+      </Route>
       <Route component={Error} />
     </Switch>
   </>

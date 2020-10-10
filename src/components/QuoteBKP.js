@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import getRandomIntInclusive from '../Helpers/getRandomIntInclusive'
+// import getRandomIntInclusive from '../Helpers/getRandomIntInclusive'
+import LocalStorage from '../utils/localStorage'
 
 const Container = styled.div`
   width: 100%;
@@ -45,15 +47,18 @@ const Link = styled.a`
 const Quote = () => {
   const [quotes, setQuotes] = useState([])
   const API_URL = 'https://type.fit/api/quotes'
+  const location = useLocation()
 
   useEffect(() => {
     const fetchQuotes = async () => {
       const response = await fetch(API_URL)
       const json = await response.json()
       setQuotes(json)
+      LocalStorage.set('quotes', json)
+      console.log('finished fetching')
     }
     fetchQuotes()
-  }, [])
+  }, [location.key])
 
   const displayQuote = () => {
     const listedQuote = quotes.map((quote) => (
@@ -68,8 +73,8 @@ const Quote = () => {
         </Link>
       </div>
     ))
-
-    return listedQuote[getRandomIntInclusive(1, quotes.length)]
+    // return listedQuote[getRandomIntInclusive(1, quotes.length)]
+    return listedQuote[125]
   }
 
   return (
