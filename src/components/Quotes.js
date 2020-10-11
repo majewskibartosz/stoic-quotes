@@ -46,18 +46,20 @@ const Link = styled.a`
 
 const url = 'https://type.fit/api/quotes'
 
-const renderQuote = ({ author, text }) => (
-  <div key={author}>
-    <p>"{text}"</p>
-    <Link
-      href={`https://en.wikipedia.org/wiki/${author}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {author}
-    </Link>
-  </div>
-)
+const renderQuote = ({ author, text }) => {
+  return (
+    <div key={author + text}>
+      <p>"{text}"</p>
+      <Link
+        href={`https://en.wikipedia.org/wiki/${author}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {author}
+      </Link>
+    </div>
+  )
+}
 
 const Quotes = () => {
   const { data: quotes, loading, error } = useRequest(url)
