@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { getCachedData, getFreshData } from '../utils/request'
+import useRequest from '../hooks/useRequest'
 
 const Container = styled.div`
   width: 100%;
@@ -44,6 +44,8 @@ const Link = styled.a`
   }
 `
 
+const url = 'https://type.fit/api/quotes'
+
 const renderQuote = ({ author, text }) => (
   <div key={author}>
     <p>"{text}"</p>
@@ -57,37 +59,15 @@ const renderQuote = ({ author, text }) => (
   </div>
 )
 
-const Quotes = ({ useCache }) => {
-  const [quotes, setQuotes] = useState([])
-  const [displayState, setDisplayState] = useState('')
+const Quotes = () => {
+  const { data: quotes, loading, error } = useRequest(url)
 
-  const getQuotes = async () => {
-    setQuotes([])
-    setDisplayState('Loading from API')
-
-    const url = 'https://type.fit/api/quotes'
-
-    if (useCache) {
-      const cachedQuotes = getCachedData(url)
-      if (cachedQuotes) {
-        setQuotes(cachedQuotes)
-        setDisplayState('From cache')
-      }
-    }
-
-    const freshQuotes = await getFreshData(url, useCache)
-    setQuotes(freshQuotes)
-
-    setDisplayState('Fresh content')
-  }
+  if (loading) return <Text>Loading...</Text>
+  if (error) return <Text>There was an error!</Text>
 
   return (
     <Container>
       <Text>{quotes.map(renderQuote)}</Text>
-      {displayState && <p>{displayState}</p>}
-      <button className="button" onClick={getQuotes}>
-        Load
-      </button>
     </Container>
   )
 }
