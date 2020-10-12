@@ -56,7 +56,7 @@ const renderQuote = ({ author, text }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {author}
+        {author || 'Unknown'}
       </Link>
     </div>
   )
