@@ -7,26 +7,29 @@ import useRequest from '../hooks/useRequest'
 import getRandomIntInclusive from '../utils/getRandomIntInclusive'
 
 const Container = styled.div`
-  width: 100%;
-  position: absolute;
+  width: 400px;
+  height: auto;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
-  margin-bottom: 0px;
   color: rgba(255, 255, 255, 0.9);
   z-index: 1;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-18px);
-  }
 `
 
 const Text = styled.div`
-  width: 100%;
+  padding-bottom: 5px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(10px + 1vmin);
   line-height: 1.1;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-18px);
+  }
 `
 
 const Link = styled.a`
