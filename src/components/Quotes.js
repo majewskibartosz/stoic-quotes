@@ -4,6 +4,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import useRequest from '../hooks/useRequest'
+import getRandomIntInclusive from '../utils/getRandomIntInclusive'
 
 const Container = styled.div`
   width: 100%;
@@ -69,7 +70,11 @@ const Quotes = () => {
 
   return (
     <Container>
-      <Text>{quotes.map(renderQuote)}</Text>
+      <Text>
+        {loading && <p>Loading...</p>}
+        {error && <p>There was an error!</p>}
+        {quotes && renderQuote(quotes[getRandomIntInclusive(1, quotes.length)])}
+      </Text>
     </Container>
   )
 }

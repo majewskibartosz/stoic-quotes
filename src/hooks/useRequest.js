@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { readFromCache, writeToCache } from '../utils/cache'
 
-const useRequest = (url) => {
+const useRequest = (url, useCache = true) => {
   const [data, setData] = useState()
   const [error, setError] = useState()
 
   const getFreshData = async () => {
     try {
       const { data: response } = await axios.get(url)
-      writeToCache(url, response)
+      useCache && writeToCache(url, response)
       setData(response)
     } catch (e) {
       setError(e)
@@ -23,7 +24,7 @@ const useRequest = (url) => {
   }
 
   useEffect(() => {
-    getCachedData()
+    useCache && getCachedData()
     getFreshData()
   }, [])
 
