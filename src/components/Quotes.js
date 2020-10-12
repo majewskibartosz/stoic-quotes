@@ -53,7 +53,7 @@ const url = 'https://type.fit/api/quotes'
 const renderQuote = ({ author, text }) => {
   return (
     <div key={author + text}>
-      <p>"{text}"</p>
+      <p>" {text} "</p>
       <Link
         href={`https://en.wikipedia.org/wiki/${author}`}
         target="_blank"
