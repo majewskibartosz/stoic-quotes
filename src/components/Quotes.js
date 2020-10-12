@@ -7,7 +7,7 @@ import useRequest from '../hooks/useRequest'
 import getRandomIntInclusive from '../utils/getRandomIntInclusive'
 
 const Container = styled.div`
-  width: 400px;
+  width: 500px;
   height: auto;
   position: fixed;
   left: 50%;
@@ -25,7 +25,6 @@ const Text = styled.div`
   font-size: calc(10px + 1vmin);
   line-height: 1.1;
   transition: transform 0.3s ease;
-  overflow: hidden;
 
   &:hover {
     transform: translateY(-18px);
@@ -53,7 +52,7 @@ const url = 'https://type.fit/api/quotes'
 const renderQuote = ({ author, text }) => {
   return (
     <div key={author + text}>
-      <p>" {text} "</p>
+      <p>"{text}"</p>
       <Link
         href={`https://en.wikipedia.org/wiki/${author}`}
         target="_blank"
