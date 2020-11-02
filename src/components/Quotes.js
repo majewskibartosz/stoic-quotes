@@ -12,7 +12,7 @@ const Container = styled.div`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
+  bottom: ${({ bottom }) => bottom};
   color: rgba(255, 255, 255, 0.9);
   z-index: 1;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
@@ -71,7 +71,7 @@ const Quotes = () => {
   if (error) return <Text>There was an error!</Text>
 
   return (
-    <Container>
+    <Container bottom={0}>
       <Text>
         {loading && <p>Loading...</p>}
         {error && <p>There was an error!</p>}
