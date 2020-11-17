@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import EdiText from 'react-editext'
 
 const Container = styled.div`
@@ -25,23 +25,40 @@ const Text = styled.h1`
   transform: translate(-50%, 60%);
 `
 
-const Example = (props) => {
-  const [value, setValue] = useState('What is real? How do you define real?')
-
-  const handleSave = (val) => {
-    console.log('Edited Value -> ', val)
-    setValue(val)
+const fadeOut = keyframes`
+  100% {
+    opacity: 1;
   }
-  return (
-    <div className="container">
-      <EdiText type="text" value={value} onSave={handleSave} />
-    </div>
-  )
-}
+  0% {
+    opacity: 0;
+  }
+`
+
+const FadeOutText = styled.h1`
+  animation: 1s ${fadeOut} ease-out;
+`
+
+// const Example = (props) => {
+//   const [value, setValue] = useState('What is real? How do you define real?')
+
+//   const handleSave = (val) => {
+//     console.log('Edited Value -> ', val)
+//     setValue(val)
+//   }
+//   return (
+//     <Container>
+//       <Text>
+//         <EdiText type="text" value={value} onSave={handleSave} />{' '}
+//       </Text>
+//     </Container>
+//   )
+// }
 
 const Journal = () => (
   <Container>
-    <Text>This is Journal.</Text>
+    <FadeOutText>
+      <Text>This is Journal.</Text>
+    </FadeOutText>
     <Example></Example>
   </Container>
 )
