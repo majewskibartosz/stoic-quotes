@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import EdiText from 'react-editext'
+import 'typeface-roboto'
 
 const Container = styled.div`
   width: 100%;
@@ -24,20 +25,6 @@ const Text = styled.h1`
   left: 50%;
   transform: translate(-50%, 60%);
 `
-
-const fadeOut = keyframes`
-  100% {
-    opacity: 1;
-  }
-  0% {
-    opacity: 0;
-  }
-`
-
-const FadeOutText = styled.h1`
-  animation: 1s ${fadeOut} ease-out;
-`
-
 // const Example = (props) => {
 //   const [value, setValue] = useState('What is real? How do you define real?')
 
@@ -54,12 +41,24 @@ const FadeOutText = styled.h1`
 //   )
 // }
 
+// const fadeOut = keyframes`
+//   100% {
+//     opacity: 1;
+
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// `
+
+// const FadeOutButon = styled.button`
+//   animation: 1s ${fadeIn} ease-out;
+// `
+
 const Journal = () => (
   <Container>
-    <FadeOutText>
-      <Text>This is Journal.</Text>
-    </FadeOutText>
-    <Example></Example>
+    <Text>This is Journal.</Text>
+    {/* <Example></Example> */}
   </Container>
 )
 

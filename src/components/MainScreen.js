@@ -6,11 +6,11 @@ import Clock from './Clock'
 import Greeting from './Greeting'
 
 const MainScreen = () => (
-  <div>
+  <>
     <Clock />
     <Greeting />
     <Quotes useCache />
-  </div>
+  </>
 )
 
 export default MainScreen
