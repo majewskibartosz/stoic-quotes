@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
-import EdiText from 'react-editext'
+import React from 'react'
+import styled, { css, keyframes } from 'styled-components'
 
 const Container = styled.div`
   width: 100%;
@@ -25,41 +24,30 @@ const Text = styled.h1`
   transform: translate(-50%, 60%);
 `
 
-const fadeOut = keyframes`
-  100% {
-    opacity: 1;
-  }
+const pulse = keyframes`
   0% {
     opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
 `
 
-const FadeOutText = styled.h1`
-  animation: 1s ${fadeOut} ease-out;
+const animation = (props) =>
+  css`
+    ${pulse} ${props.animationLength} infinite alternate;
+  `
+
+const PulseButton = styled.button`
+  animation: ${animation};
 `
-
-// const Example = (props) => {
-//   const [value, setValue] = useState('What is real? How do you define real?')
-
-//   const handleSave = (val) => {
-//     console.log('Edited Value -> ', val)
-//     setValue(val)
-//   }
-//   return (
-//     <Container>
-//       <Text>
-//         <EdiText type="text" value={value} onSave={handleSave} />{' '}
-//       </Text>
-//     </Container>
-//   )
-// }
 
 const Journal = () => (
   <Container>
-    <FadeOutText>
-      <Text>This is Journal.</Text>
-    </FadeOutText>
-    <Example></Example>
+    <Text>
+      This is Journal
+      <PulseButton />
+    </Text>
   </Container>
 )
 
