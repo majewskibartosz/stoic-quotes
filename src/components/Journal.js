@@ -16,12 +16,6 @@ const Text = styled.h1`
   font-weight: 500;
   line-height: normal;
   user-select: none;
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
-
-  position: fixed;
-  top: 37%;
-  left: 50%;
-  transform: translate(-50%, 60%);
 `
 
 const pulse = keyframes`
@@ -33,6 +27,15 @@ const pulse = keyframes`
   }
 `
 
+const SharedPosition = styled.div`
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+
+  position: fixed;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, 60%);
+`
+
 const animation = (props) =>
   css`
     ${pulse} ${props.animationLength} infinite alternate;
@@ -40,14 +43,16 @@ const animation = (props) =>
 
 const PulseButton = styled.button`
   animation: ${animation};
+  width: 33.3px;
+  height: 3em;
 `
 
 const Journal = () => (
   <Container>
-    <Text>
-      This is Journal
+    <SharedPosition>
+      <Text>This is Journal</Text>
       <PulseButton />
-    </Text>
+    </SharedPosition>
   </Container>
 )
 
