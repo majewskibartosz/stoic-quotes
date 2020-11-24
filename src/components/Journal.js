@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
+=======
+import React, { useState } from 'react'
+import styled, { keyframes } from 'styled-components'
+import EdiText from 'react-editext'
+import 'typeface-roboto'
+>>>>>>> 738a3d523673039021159bfa40cbdf6ddceb7cb9
 
 const Container = styled.div`
   width: 100%;
@@ -25,6 +32,7 @@ const SharedPosition = styled.div`
   left: 50%;
   transform: translate(-50%, 60%);
 `
+<<<<<<< HEAD
 
 // const pulse = keyframes`
 //   0% {
@@ -32,6 +40,14 @@ const SharedPosition = styled.div`
 //   }
 //   100% {
 //     opacity: 1;
+=======
+// const Example = (props) => {
+//   const [value, setValue] = useState('What is real? How do you define real?')
+
+//   const handleSave = (val) => {
+//     console.log('Edited Value -> ', val)
+//     setValue(val)
+>>>>>>> 738a3d523673039021159bfa40cbdf6ddceb7cb9
 //   }
 // `
 
@@ -49,11 +65,30 @@ const SharedPosition = styled.div`
 //   console.log('came from pulse button as a click handler')
 // }
 
+// const fadeOut = keyframes`
+//   100% {
+//     opacity: 1;
+
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// `
+
+// const FadeOutButon = styled.button`
+//   animation: 1s ${fadeIn} ease-out;
+// `
+
 const Journal = () => (
   <Container>
+<<<<<<< HEAD
     <SharedPosition>
       <Text>This is Journal</Text>
     </SharedPosition>
+=======
+    <Text>This is Journal.</Text>
+    {/* <Example></Example> */}
+>>>>>>> 738a3d523673039021159bfa40cbdf6ddceb7cb9
   </Container>
 )
 
