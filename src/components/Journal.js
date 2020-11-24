@@ -17,16 +17,6 @@ const Text = styled.h1`
   line-height: normal;
   user-select: none;
 `
-
-const pulse = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
-
 const SharedPosition = styled.div`
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 
@@ -36,22 +26,33 @@ const SharedPosition = styled.div`
   transform: translate(-50%, 60%);
 `
 
-const animation = (props) =>
-  css`
-    ${pulse} ${props.animationLength} infinite alternate;
-  `
+// const pulse = keyframes`
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// `
 
-const PulseButton = styled.button`
-  animation: ${animation};
-  width: 33.3px;
-  height: 3em;
-`
+// const animation = (props) =>
+//   css`
+//     ${pulse} ${props.animationLength} infinite alternate;
+//   `
+
+// const PulseButton = styled.button`
+//   animation: ${animation};
+//   width: 33.3px;
+//   height: 3em;
+// `
+// const onClickHandler = () => {
+//   console.log('came from pulse button as a click handler')
+// }
 
 const Journal = () => (
   <Container>
     <SharedPosition>
       <Text>This is Journal</Text>
-      <PulseButton />
     </SharedPosition>
   </Container>
 )
