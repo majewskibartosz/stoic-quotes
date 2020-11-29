@@ -1,16 +1,18 @@
-
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import EdiText from 'react-editext'
 
-
 const Container = styled.div`
-
   width: 100%;
   text-align: center;
   position: relative;
   z-index: 1;
 `
+const Wrapper = ({ message }) => {
+  return <StyledWrapper>{message}</StyledWrapper>
+}
+
+
 const Text = styled.h1`
   width: 100%;
   color: white;
@@ -28,46 +30,54 @@ const SharedPosition = styled.div`
   top: 37%;
   left: 50%;
   transform: translate(-50%, 60%);
-// const pulse = keyframes`
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// `
+`
+const pulse = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
 
-// const animation = (props) =>
-//   css`
-//     ${pulse} ${props.animationLength} infinite alternate;
-//   `
+const animation = (props) =>
+  css`
+    ${pulse} ${props.animationLength} infinite alternate;
+  `
 
-// const PulseButton = styled.button`
-//   animation: ${animation};
-//   width: 33.3px;
-//   height: 3em;
-// `
-// const onClickHandler = () => {
-//   console.log('came from pulse button as a click handler')
-// }
+const PulseButton = styled.button`
+  animation: ${animation};
+  width: 33.3px;
+  height: 3em;
+`
+const onClickHandler = () => {
+  console.log('came from pulse button as a click handler')
+}
+`
 
-// const fadeOut = keyframes`
-//   100% {
-//     opacity: 1;
+const fadeOut = keyframes`
+  100% {
+    opacity: 1;
 
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// `
+  }
+  100% {
+    opacity: 0;
+  }
+`
 
-// const FadeOutButon = styled.button`
-//   animation: 1s ${fadeIn} ease-out;
-// `
+const FadeOutButon = styled.button`
+  animation: 1s ${fadeOut} ease-out;
+`
+
+const 
 
 const Journal = () => (
   <Container>
-
+    <SharedPosition>
+      <PulseButton onClick={onClickHandler} />
+      <FadeOutButon />
+      <Text>This is Journal.</Text>
+    </SharedPosition>
   </Container>
 )
 
