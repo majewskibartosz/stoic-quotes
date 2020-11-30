@@ -1,6 +1,11 @@
+/* eslint-disable no-undef */
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import EdiText from 'react-editext'
+import { fadeIn } from 'react-animations'
+
+// Animations
+const fadeInAnimation = keyframes`${fadeIn}`
 
 const StyledNote = styled(EdiText)`
   button {
@@ -30,7 +35,7 @@ const StyledNote = styled(EdiText)`
     border-radius: 5px;
   }
   div[editext='view-container'] {
-    background: black;
+    background: rgba(0, 0, 0, 0.185);
     padding: 15px;
     border-radius: 5px;
     color: #fff;
@@ -42,7 +47,7 @@ const StyledNote = styled(EdiText)`
     transform: translate(-50%, 60%);
   }
   div[editext='edit-container'] {
-    background: black;
+    background: rgba(0, 0, 0, 0.185);
     padding: 15px;
     border-radius: 5px;
     color: #fff;
@@ -61,6 +66,7 @@ const Container = styled.div`
   z-index: 1;
 `
 const Text = styled.h1`
+  animation: 3s ${fadeInAnimation};
   width: 100%;
   color: white;
   text-align: center;
