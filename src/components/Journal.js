@@ -1,18 +1,65 @@
-import React from 'react'
-import styled, { css, keyframes } from 'styled-components'
+import React, { useState } from 'react'
+import styled from 'styled-components'
 import EdiText from 'react-editext'
 
+const StyledNote = styled(EdiText)`
+  button {
+    border-radius: 2px;
+  }
+  button[editext='edit-button'] {
+    color: #000;
+    width: 40px;
+  }
+  button[editext='save-button'] {
+    width: 40px;
+    &:hover {
+      background: greenyellow;
+    }
+  }
+  button[editext='cancel-button'] {
+    &:hover {
+      background: crimson;
+      color: #fff;
+    }
+  }
+  input,
+  textarea {
+    background: white;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  div[editext='view-container'] {
+    background: black;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    width: 50%;
+    max-width: 30%;
+    position: fixed;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, 60%);
+  }
+  div[editext='edit-container'] {
+    background: black;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    width: 50%;
+    max-width: 30%;
+    position: fixed;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, 60%);
+  }
+`
 const Container = styled.div`
   width: 100%;
   text-align: center;
   position: relative;
   z-index: 1;
 `
-const Wrapper = ({ message }) => {
-  return <StyledWrapper>{message}</StyledWrapper>
-}
-
-
 const Text = styled.h1`
   width: 100%;
   color: white;
@@ -22,8 +69,6 @@ const Text = styled.h1`
   font-weight: 500;
   line-height: normal;
   user-select: none;
-`
-const SharedPosition = styled.div`
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 
   position: fixed;
@@ -31,53 +76,29 @@ const SharedPosition = styled.div`
   left: 50%;
   transform: translate(-50%, 60%);
 `
-const pulse = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
 
-const animation = (props) =>
-  css`
-    ${pulse} ${props.animationLength} infinite alternate;
-  `
+const Note = (props) => {
+  const [value, setValue] = useState('What is real? How do you define real?')
 
-const PulseButton = styled.button`
-  animation: ${animation};
-  width: 33.3px;
-  height: 3em;
-`
-const onClickHandler = () => {
-  console.log('came from pulse button as a click handler')
+  const handleSave = (val) => {
+    console.log('Edited Value -> ', val)
+    setValue(val)
+  }
+  return (
+    <div className="container">
+      <EdiText type="text" value={value} onSave={handleSave} />
+    </div>
+  )
 }
-`
-
-const fadeOut = keyframes`
-  100% {
-    opacity: 1;
-
-  }
-  100% {
-    opacity: 0;
-  }
-`
-
-const FadeOutButon = styled.button`
-  animation: 1s ${fadeOut} ease-out;
-`
-
-const 
 
 const Journal = () => (
   <Container>
-    <SharedPosition>
-      <PulseButton onClick={onClickHandler} />
-      <FadeOutButon />
-      <Text>This is Journal.</Text>
-    </SharedPosition>
+    <Text>
+      This is Journal.
+      <StyledNote>
+        <Note />
+      </StyledNote>
+    </Text>
   </Container>
 )
 

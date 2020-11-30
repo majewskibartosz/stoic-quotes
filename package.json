@@ -12,7 +12,7 @@
     "react-query": "^2.23.1",
     "react-query-devtools": "^2.6.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^4.0.1",
     "styled-breakpoints": "^7.1.0",
     "styled-components": "^4.4.1",
     "styled-media-query": "^2.1.2",
@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint './src/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,7 +50,12 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.2",
+    "eslint-plugin-styled-components-a11y": "0.0.17",
     "prettier": "^2.1.2",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   }
 }
