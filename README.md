@@ -1,6 +1,6 @@
 # Stoicus Maximus
 
-### Daily photo and stoic inspiration.
+### Daily photo and stoic inspirationion dashboard.
 
 [Live demo](https://stoicusmaximus.netlify.app/)
 

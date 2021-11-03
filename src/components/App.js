@@ -6,9 +6,7 @@ import reset from 'styled-reset'
 import MainScreen from './MainScreen'
 import Background from './Background'
 import Overlay from './Overlay'
-// import Journal from './Journal'
 import Error from './Error'
-// import Navbar from './Navbar'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -18,14 +16,10 @@ const GlobalStyle = createGlobalStyle`
 const App = () => (
   <>
     <GlobalStyle />
-    {/* <Navbar /> */}
     <Overlay />
     <Background />
     <Switch>
       <Route path="/" component={MainScreen} exact />
-      {/* <Route path="/journal">
-        <Journal />
-      </Route> */}
       <Route component={Error} />
     </Switch>
   </>

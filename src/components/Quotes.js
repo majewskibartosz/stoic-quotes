@@ -67,9 +67,6 @@ const renderQuote = ({ author, text }) => {
 const Quotes = () => {
   const { data: quotes, loading, error } = useRequest(url)
 
-  if (loading) return <Text>Loading...</Text>
-  if (error) return <Text>There was an error!</Text>
-
   return (
     <Container>
       <Text>
