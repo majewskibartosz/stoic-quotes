@@ -1,4 +1,4 @@
-# Stoicus Maximus
+# Stoicus Maximus [![Netlify Status](https://api.netlify.com/api/v1/badges/1cd2f294-fa75-4a5b-9bc0-6acf0eb5d44f/deploy-status)](https://app.netlify.com/sites/stoicusmaximus/deploys)
 
 ### Daily photo and stoic inspirationion dashboard.
 
